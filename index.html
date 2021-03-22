@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeChat - Realtime Node Socket.io Chat App</title>
+    <!-- client.js/client-server connect with node.js/server .form documentation -->
+    
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="/static/client.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/dark.css">
+    <script src="https://kit.fontawesome.com/0162c9e1d8.js" crossorigin="anonymous"></script>
+    
+
+    
+</head>
+<body>
+   
+  <!-- **************For Click Button********************* -->
+    <!-- *****************for Dark Mode******************* -->
+    <div >
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="label">
+            <i class ="fas fa-moon"></i>
+            <i class ="fas fa-sun"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
+    <br>
+    <section class="chat_section">
+        <div class="logo">
+            <img height="40px"" src="/static/chat.png" alt="logo">
+            <h1>WeChatApp</h1> 
+          <!-- ***********Animation********** -->
+            <h2 class="animation-text">
+              <p class="line">Code</p>
+              <p class="line"> By</p>
+              <p class="line">Prasad</p>
+              <p class="line"> Patange</p>
+            </h2>
+           
+         
+      </div>
+        <div class="container">
+          <!-- For Messages Client id place in client.js-->
+        </div>
+            <div class="send">
+                <form action="#" id="send-container">
+                    <!-- <textarea  id="messageInp" cols="30" rows="1" placeholder="Enter a Message..."> </textarea> -->
+                    <input type="text" name="messageInp" id="messageInp" placeholder="Enter a Message..."> 
+               
+                    <button class="btn" type="submit"><i class="fa fa-paper-plane"></i></button>
+                </form>
+            </div>
+    </section>
+
+      <!--**************************************Card***************************-->
+     <div id="sidebox">
+        <div id="web">
+          <h2 class="logo1"> WeChat App</h2>
+          <p class="author">Coded By <span>Prasad Patange</span> </p>
+          <div class="items">
+            <p>This is a Real Time Chat Application for Multiple Users.<br>
+                Tech. Used:-Javascript,Socket.io library.
+                <br>
+                Features:-<br>Dark Mode,Windows Dark Mode.
+            </p>
+    
+          </div>
+          <div class="close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+        <div id="web-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <p>Info About the WeChatApp</p>
+        </div>
+      </div>
+    <!-- ****************************checkbox dark mode************************* -->
+    <script>
+        const checkbox = document.getElementById('checkbox');
+        checkbox.addEventListener('change',()=>{
+        // change the theme of the website
+        document.body.classList.toggle('dark');
+
+    });
+    
+// *********************
+// This Code is for only the floating card in right bottom corner
+// **********************
+
+const WebCifarIcon = document.querySelector("#web-icon");
+const WebCifarEl = document.querySelector("#web");
+const close = WebCifarEl.querySelector(".close");
+
+
+WebCifarIcon.addEventListener("click", () => {
+  WebCifarEl.classList.add("active");
+});
+close.addEventListener("click", () => {
+  WebCifarEl.classList.remove("active");
+});
+
+
+
+    </script>
+</body>
+</html>
