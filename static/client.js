@@ -1,4 +1,5 @@
-const socket = io('http://localhost:8000');//to connect with nodeServer
+// const socket = io('http://localhost:8000');//to connect with nodeServer
+const socket = io('https://wechat-app-prasad.herokuapp.com/');//to connect with nodeServer
 
 // Get DOM elements in respective Js variables
 const form = document.getElementById('send-container');
